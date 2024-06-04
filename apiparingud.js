@@ -70,6 +70,8 @@ if (!response.ok) {
     throw new Error(errorMessage);
 }
 
+listiraamatud();
+
 }
 
 
