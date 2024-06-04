@@ -116,15 +116,15 @@ function handleResponse(form, responseData) {
 }
 
 async function listiraamatud() {
-    const responseData = await getDataAsJson("http://localhost:5000/raamatud/");
+    const responseData = await getDataAsJson("https://azurewebappnurmik.azurewebsites.net/raamatud/");
     const resultElement = document.getElementById("raamatud_result");
 
     resultElement.innerHTML = "";
     for (var raamat of responseData.raamatud){
         // Split the file name at the dot and take the first part (before the dot)
         const ilmaLaiendita = raamat.split('.')[0];
-        resultElement.innerHTML += '<a href="http://localhost:5000/raamatud/' + ilmaLaiendita + '" download="' + ilmaLaiendita + '.txt">' + ilmaLaiendita + '</a> ' +
-            '<a href="#" onclick="deleteObject(\'http://localhost:5000/raamatud/' + ilmaLaiendita + '\')"> [kustuta]</a>' +
+        resultElement.innerHTML += '<a href="https://azurewebappnurmik.azurewebsites.net/raamatud/' + ilmaLaiendita + '" download="' + ilmaLaiendita + '.txt">' + ilmaLaiendita + '</a> ' +
+            '<a href="#" onclick="deleteObject(\'https://azurewebappnurmik.azurewebsites.net/raamatud/' + ilmaLaiendita + '\')"> [kustuta]</a>' +
             "<br />";
     }
 }
