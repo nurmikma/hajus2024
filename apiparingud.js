@@ -41,13 +41,14 @@ async function postFormDataAsJson({ url, formData }) {
 
 async function getDataAsJson(url) {
 
-const fetchOptions = {
-    method: "GET",
-    headers: {
-        "Accept": "application/json"
-    }
-};
-const response = await fetch(url, fetchOptions);
+    const fetchOptions = {
+        method: "GET",
+        headers: {
+            "Accept": "application/json"
+        }
+    };
+
+    const response = await fetch(url, fetchOptions);
 
 if (!response.ok) {
     const errorMessage = await response.text();
